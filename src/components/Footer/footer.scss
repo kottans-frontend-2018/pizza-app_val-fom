@@ -1,11 +1,13 @@
-.footer {
+@import "../../scss/variables";
+
+.footer__container {
 	background: $footer-background;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
 }
 
-.footer__container {
+.footer {
 	max-width: 1170px;
 	padding: 0 1.5rem;
 	margin: auto;
@@ -16,10 +18,10 @@
 	grid-gap: 1rem;
 	align-items: center;
 	justify-items: center;
-	:first-child {
+	> :first-child {
 		justify-self: left;
 	}
-	:last-child {
+	> :last-child {
 		justify-self: right;
 	}
 }
@@ -33,6 +35,21 @@
 		white-space: nowrap;
 		&:hover {
 			color: $color-transparent;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.footer {
+		grid-template-columns: auto;
+		justify-content: center;
+		> :first-child {
+			justify-self: center;
+			align-self: self-end;
+		}
+		> :last-child {
+			justify-self: center;
+			align-self: self-start;
 		}
 	}
 }
